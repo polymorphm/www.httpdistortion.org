@@ -17,8 +17,6 @@ def flag_active_menu(check_menu_name):
 <html>
     <head>
         <meta charset="utf-8" />
-        <meta http-equiv="X-Frame-Options" content="DENY" />
-        <meta http-equiv="X-Ua-Compatible" content="IE=edge,chrome=1" />
         <meta name="viewport" content="width=device-width" />
         
         <title>${'{} | {}'.format(title, request.environ['app.DEFAULT_TITLE']) if title != request.environ['app.DEFAULT_TITLE'] else title | h}</title>
