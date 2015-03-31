@@ -26,7 +26,12 @@ def download_view():
             )
 
 def source_view():
-    bottle.redirect('{}/source/overview'.format(bottle.request.environ['app.ROOT']))
+    bottle.redirect()
+    bottle.response.set_header('Status', '303 See Other')
+    bottle.response.set_header(
+            'Location',
+            '{}/source/overview'.format(bottle.request.environ['app.ROOT']),
+            )
 
 def source_render(**kwargs):
     title = kwargs.pop('title', None)
