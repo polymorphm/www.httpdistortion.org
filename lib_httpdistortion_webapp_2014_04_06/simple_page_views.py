@@ -26,7 +26,6 @@ def download_view():
             )
 
 def source_view():
-    bottle.redirect()
     bottle.response.set_header('Status', '303 See Other')
     bottle.response.set_header(
             'Location',
