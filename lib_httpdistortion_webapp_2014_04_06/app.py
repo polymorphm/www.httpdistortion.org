@@ -47,6 +47,15 @@ def create_app(root=None, static_root=None):
                 'app.DEFAULT_KEYWORDS': DEFAULT_KEYWORDS,
                 'app.FAVICON': '{}/favicon.png'.format(bottle.request.environ['app.STATIC_ROOT']),
                 })
+        
+        bottle.response.set_header(
+                'Alt-Svc',
+                'h2=":443";ma=5184000'
+                )
+        bottle.response.set_header(
+                'Public-Key-Pins',
+                'pin-sha256="Duji+RBwky2pUv5i/GkBkX4b1VFGfZAV5yJghJG7s/s="; max-age=5184000'
+                )
     
     app = bottle.Bottle()
     
@@ -56,14 +65,5 @@ def create_app(root=None, static_root=None):
     app.route('{}/favicon.ico'.format(root), callback=favicon_view)
     simple_page_views.add_routes(app, root)
     app.route('{}/live-xxx54bcxxTESTxxTESTxx3c7bxxx.txt'.format(root), callback=liveinternet_reminder_view)
-    
-    bottle.response.set_header(
-            'Alt-Svc',
-            'h2=":443";ma=5184000'
-            )
-    bottle.response.set_header(
-            'Public-Key-Pins',
-            'pin-sha256="Duji+RBwky2pUv5i/GkBkX4b1VFGfZAV5yJghJG7s/s="; max-age=5184000'
-            )
     
     return app
