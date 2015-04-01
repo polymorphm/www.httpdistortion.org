@@ -50,7 +50,11 @@ def create_app(root=None, static_root=None):
         
         bottle.response.set_header(
                 'Alt-Svc',
-                'h2=":443";ma=5184000'
+                'h2=":443";ma=31536000'
+                )
+        bottle.response.set_header(
+                'Strict-Transport-Security',
+                'max-age=31536000'
                 )
         bottle.response.set_header(
                 'Public-Key-Pins',
