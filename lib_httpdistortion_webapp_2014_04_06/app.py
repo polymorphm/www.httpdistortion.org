@@ -52,6 +52,10 @@ def create_app(root=None, static_root=None):
                 'Alt-Svc',
                 'h2=":443";ma=5184000'
                 )
+        bottle.response.set_header(
+                'Public-Key-Pins',
+                'pin-sha256="Duji+RBwky2pUv5i/GkBkX4b1VFGfZAV5yJghJG7s/s="; max-age=5184000'
+                )
     
     app = bottle.Bottle()
     
