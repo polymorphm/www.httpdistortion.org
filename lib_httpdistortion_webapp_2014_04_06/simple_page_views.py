@@ -26,6 +26,9 @@ def download_view():
             )
 
 def source_view():
+    #bottle.redirect('{}/source/overview'.format(bottle.request.environ['app.ROOT']))
+    # XXX   see issue https://github.com/bottlepy/bottle/issues/749
+    
     bottle.response.set_header('Status', '303 See Other')
     bottle.response.set_header(
             'Location',
