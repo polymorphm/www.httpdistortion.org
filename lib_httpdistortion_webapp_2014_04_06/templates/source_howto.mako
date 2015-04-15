@@ -11,7 +11,7 @@
 
 $ cd plasticine-socks-server
 
-$ git checkout plasticine-socks-server-0.9.2</pre>
+$ git checkout plasticine-socks-server-0.9.4</pre>
 
 <p>Для запуска утилиты потребуется версия <span class="highlight-color">Python</span>
         не менее чем <span class="highlight-color">3.4</span> .
