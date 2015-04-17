@@ -48,6 +48,11 @@ def create_app(root=None, static_root=None):
                 'app.DEFAULT_KEYWORDS': DEFAULT_KEYWORDS,
                 'app.FAVICON': '{}/favicon.png'.format(bottle.request.environ['app.STATIC_ROOT']),
                 })
+        
+        bottle.response.set_header(
+                'Alt-Svc',
+                'h2=":443";ma=31536000'
+                )
     
     app = bottle.Bottle()
     

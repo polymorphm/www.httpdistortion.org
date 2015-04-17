@@ -7,9 +7,6 @@
             ROLE_LIST: [
                     ['page-outer-role', 'page-limit'],
                     ['page-role', 'page-border', 'page-color'],
-                    ['header-logo-img-role', 'header-logo-img'],
-                    ['header-logo-text-role', 'header-logo-text'],
-                    ['header-logo-text-sub-text-role', 'header-logo-text-sub-text'],
                     ['highlight-color-role', 'highlight-color'],
                     ['clear-both-role', 'clear-both'],
                     ['header-role', 'header-border', 'header-text'],

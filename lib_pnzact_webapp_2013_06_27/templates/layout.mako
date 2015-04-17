@@ -15,9 +15,7 @@ def flag_active_menu(check_menu_name):
 <html>
     <head>
         <meta charset="utf-8" />
-        <meta http-equiv="X-Frame-Options" content="DENY" />
-        <meta http-equiv="X-Ua-Compatible" content="IE=edge,chrome=1" />
-        <script src="${request.environ['app.STATIC_ROOT'] | h}/js/google_chrome_frame_for_microsoft_ie.js"></script>
+        <meta name="viewport" content="width=device-width" />
         
         <title>${title | h}</title>
         <meta name="description" content="${description | h}" />
@@ -34,17 +32,18 @@ def flag_active_menu(check_menu_name):
             <div class="page-role">
                 <header>
                     <div>
-                        <a href="${request.environ['app.ROOT'] | h}/"><img class="header-logo-img-role" alt="[logo]" src="${request.environ['app.STATIC_ROOT'] | h}/img/default/header_logo.png" /></a>
-                        <div class="header-logo-text-role">
+                        <div class="header-logo-img-block">
+                            <a href="${request.environ['app.ROOT'] | h}/"><img class="header-logo-img" alt="[logo]" src="${request.environ['app.STATIC_ROOT'] | h}/img/default/header_logo.png" /></a>
+                        </div>
+                        <div class="header-logo-text-block">
                             <div>
                                 Pnzact: Согласования и Разрешения в Пензе
                             </div>
-                            <div class="header-logo-text-sub-text-role">
+                            <div class="header-logo-text-sub-text">
                                 <div>Поможем решить проблемы с государством!</div>
                                 <div class="highlight-color-role">Тел: ${tel | h}</div>
                             </div>
                         </div>
-                        <div class="clear-both-role"></div>
                     </div>
                     <nav class="header-role">
                         <a class="header-item-role ${flag_active_menu('home') | h}" href="${request.environ['app.ROOT'] | h}/">О компании</a>

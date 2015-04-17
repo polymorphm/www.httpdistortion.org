@@ -90,22 +90,23 @@ main {
     color: gray;
 }
 
-.header-logo-img {
-    float: left;
-    padding: 10px;
-    background-color: rgb(200, 50, 50);
-    border-radius: 5px;
-    margin-right: 30px;
-    margin-bottom: 10px;
+.header-logo-img-block {
+    display: inline-block;
 }
 
-.header-logo-text {
-    margin-left: 100px;
+.header-logo-text-block {
+    display: inline-block;
     padding: 15px;
     font-size: 1.8em;
     font-weight: bold;
     color: gray;
     color: darkgray;
+}
+
+.header-logo-img {
+    padding: 10px;
+    background-color: rgb(200, 50, 50);
+    border-radius: 5px;
 }
 
 .header-logo-text-sub-text {
@@ -121,6 +122,7 @@ main {
 }
 
 a.header-item {
+    display: inline-block;
     margin: 0 15px;
     padding: 5px 15px;
     color: inherit;

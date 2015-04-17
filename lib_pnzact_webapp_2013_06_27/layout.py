@@ -19,7 +19,9 @@ def render_layout(**kwargs):
     tpl_kwargs.update(kwargs)
     
     bottle.response.set_header('Content-Type', 'text/html;charset=utf-8')
-    bottle.response.set_header('X-Frame-Options', 'DENY')
-    bottle.response.set_header('X-Ua-Compatible', 'IE=edge,chrome=1')
+    bottle.response.set_header(
+            'Content-Security-Policy',
+            'frame-ancestors \'self\''
+            )
     
     return template.render(**tpl_kwargs)
