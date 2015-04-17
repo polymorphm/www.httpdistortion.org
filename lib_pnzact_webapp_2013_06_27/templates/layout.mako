@@ -21,15 +21,15 @@ def flag_active_menu(check_menu_name):
         <meta name="description" content="${description | h}" />
         <meta name="keywords" content="${keywords | h}" />
         <meta name='yandex-verification' content='7d1b48eb6ab2227b' />
+        <meta name="app__root" content="${request.environ['app.ROOT'] | h}" />
+        <meta name="app__static_root" content="${request.environ['app.STATIC_ROOT'] | h}" />
         
         <link rel="shortcut icon" href="${request.environ['app.FAVICON'] | h}" />
         <link rel="stylesheet" media="screen" href="${request.environ['app.STATIC_ROOT'] | h}/css/default.css" />
-        <script src="${request.environ['app.STATIC_ROOT'] | h}/js/role.js"></script>
-        <script src="${request.environ['app.STATIC_ROOT'] | h}/js/main.js"></script>
     </head>
     <body>
-        <div class="page-outer-role">
-            <div class="page-role">
+        <div class="page-outer">
+            <div class="page-border page-color">
                 <header>
                     <div>
                         <div class="header-logo-img-block">
@@ -41,24 +41,24 @@ def flag_active_menu(check_menu_name):
                             </div>
                             <div class="header-logo-text-sub-text">
                                 <div>Поможем решить проблемы с государством!</div>
-                                <div class="highlight-color-role">Тел: ${tel | h}</div>
+                                <div class="highlight-color">Тел: ${tel | h}</div>
                             </div>
                         </div>
                     </div>
-                    <nav class="header-role">
-                        <a class="header-item-role ${flag_active_menu('home') | h}" href="${request.environ['app.ROOT'] | h}/">О компании</a>
-                        <a class="header-item-role ${flag_active_menu('private') | h}" href="${request.environ['app.ROOT'] | h}/private">Частным лицам</a>
-                        <a class="header-item-role ${flag_active_menu('enterprise') | h}" href="${request.environ['app.ROOT'] | h}/enterprise">Юр лицам</a>
-                        <a class="header-item-role ${flag_active_menu('our_clients') | h}" href="${request.environ['app.ROOT'] | h}/our-clients">Наши клиенты</a>
-                        <a class="header-item-role ${flag_active_menu('contacts') | h}" href="${request.environ['app.ROOT'] | h}/contacts">Контакты</a>
+                    <nav class="header-border header-text">
+                        <a class="header-item ${flag_active_menu('home') | h}" href="${request.environ['app.ROOT'] | h}/">О компании</a>
+                        <a class="header-item ${flag_active_menu('private') | h}" href="${request.environ['app.ROOT'] | h}/private">Частным лицам</a>
+                        <a class="header-item ${flag_active_menu('enterprise') | h}" href="${request.environ['app.ROOT'] | h}/enterprise">Юр лицам</a>
+                        <a class="header-item ${flag_active_menu('our_clients') | h}" href="${request.environ['app.ROOT'] | h}/our-clients">Наши клиенты</a>
+                        <a class="header-item ${flag_active_menu('contacts') | h}" href="${request.environ['app.ROOT'] | h}/contacts">Контакты</a>
                     </nav>
                 </header>
                 <main>
                     <%include file="${content_file}" />
-                    <div class="clear-both-role"></div>
+                    <div class="clear-both"></div>
                 </main>
             </div>
-            <footer class="footer-role">
+            <footer class="footer-border footer-text">
                 <p>Copyright Pnzact Team.</p>
                 <p>
                     <script>
