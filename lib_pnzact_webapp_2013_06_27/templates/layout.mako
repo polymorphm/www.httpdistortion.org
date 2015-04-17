@@ -28,7 +28,7 @@ def flag_active_menu(check_menu_name):
         <link rel="stylesheet" media="screen" href="${request.environ['app.STATIC_ROOT'] | h}/css/default.css" />
     </head>
     <body>
-        <div class="page-outer">
+        <div class="page-limit">
             <div class="page-border page-color">
                 <header>
                     <div>
