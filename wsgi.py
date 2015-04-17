@@ -8,7 +8,7 @@ import pnzact_wsgi as _pnzact_wsgi
 
 _application_by_host_dict = {
     'www.httpdistortion.org': _httpdistortion_wsgi.application,
-    'www.pnzact.ru': _httpdistortion_wsgi.application,
+    'www.pnzact.ru': _pnzact_wsgi.application,
 }
 
 def application(environ, start_response):
