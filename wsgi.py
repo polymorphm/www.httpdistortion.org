@@ -23,9 +23,9 @@ def application(environ, start_response):
             ('Content-Type', 'text/plain;charset=utf-8'),
         ])
         
-        return response_body.encode(),
+        yield response_body.encode()
     
-    return selected_application(environ, start_response)
+    yield from selected_application(environ, start_response)
 
 #
 # Below for testing only
