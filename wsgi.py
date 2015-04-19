@@ -22,8 +22,9 @@ def application(environ, start_response):
         start_response('404 Not Found', [
             ('Content-Type', 'text/plain;charset=utf-8'),
         ])
-        
         yield response_body.encode()
+        
+        return
     
     yield from selected_application(environ, start_response)
 
