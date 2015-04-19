@@ -39,9 +39,9 @@ def flag_active_menu(check_menu_name):
                             <div>
                                 Pnzact: Согласования и Разрешения в Пензе
                             </div>
-                            <div style="display: hidden">Penzact</div>
-                            <div style="display: hidden">Penzakt</div>
-                            <div style="display: hidden">Пензакт</div>
+                            <div style="display: none">Penzact</div>
+                            <div style="display: none">Penzakt</div>
+                            <div style="display: none">Пензакт</div>
                             <div class="header-logo-text-sub-text">
                                 <div>Поможем решить проблемы с государством!</div>
                                 <div class="highlight-color">Тел: ${tel | h}</div>
