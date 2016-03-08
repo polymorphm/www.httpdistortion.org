@@ -55,7 +55,7 @@ def application(environ, start_response):
         
         return
     
-    if path_info = '/':
+    if path_info == '/':
         yield from _health_check_app()
         
         return
