@@ -60,7 +60,7 @@ def application(environ, start_response):
         
         return
     
-    response_body = 'no application for this host'
+    response_body = 'no application for this path or host'
     
     start_response('404 Not Found', [
         ('Content-Type', 'text/plain;charset=utf-8'),
