@@ -3,11 +3,11 @@
 
 assert str is not bytes
 
-from lib_pnzact_webapp_2013_06_27 import app as _app_module
+from lib_addrinfo_webapp_2016_03_08 import app as _app_module
 
 application = _app_module.create_app(
-        root='',
-        static_root='/pnzact.static',
+        root='/api/addrinfo',
+        static_root='/api/addrinfo/static',
         )
 
 #

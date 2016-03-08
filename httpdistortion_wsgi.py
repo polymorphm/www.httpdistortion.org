@@ -7,7 +7,7 @@ from lib_httpdistortion_webapp_2014_04_06 import app as _app_module
 
 application = _app_module.create_app(
         root='',
-        static_root='/static',
+        static_root='/httpdistortion.static',
         )
 
 #
