@@ -65,6 +65,7 @@ def create_app(root=None, static_root=None):
     app.add_hook('before_request', init_settings)
     
     app.route('{}/<filename:path>'.format(static_root), callback=static_view)
+    app.route(root, method='POST', callback=addrinfo_view)
     app.route(root, callback=addrinfo_view)
     app.route('{}/'.format(root), method='POST', callback=addrinfo_view)
     app.route('{}/'.format(root), callback=addrinfo_view)
