@@ -29,17 +29,18 @@ def application(environ, start_response):
         
         return
     
-    selected_application = _application_by_host_dict.get(host)
+    tmp_environ = environ.copy()
+    path1 = _wsgi_util.shift_path_info(tmp_environ)
+    
+    if path1 == 'api':
+        path2 = _wsgi_util.shift_path_info(tmp_environ)
+        
+        selected_application = _application_by_api_path.get(path2)
     
     if selected_application is None:
-        tmp_environ = environ.copy()
+        host = environ.get('HTTP_HOST')
         
-        path = _wsgi_util.shift_path_info(tmp_environ)
-        
-        if path == 'api':
-            path = _wsgi_util.shift_path_info(tmp_environ)
-            
-            selected_application = _application_by_api_path.get(path)
+        selected_application = _application_by_host_dict.get(host)
     
     if selected_application is None:
         response_body = 'no application for this host'
