@@ -31,7 +31,7 @@ def application(environ, start_response):
     path_info = environ.get('PATH_INFO')
     
     if path_info == '/health':
-        yield from _health_check_app()
+        yield from _health_check_app(environ, start_response)
         
         return
     
@@ -56,7 +56,7 @@ def application(environ, start_response):
         return
     
     if path_info == '/':
-        yield from _health_check_app()
+        yield from _health_check_app(environ, start_response)
         
         return
     
