@@ -34,25 +34,28 @@ def application(environ, start_response):
     
     if path1 == 'api':
         path2 = _wsgi_util.shift_path_info(tmp_environ)
-        
         selected_application = _application_by_api_path.get(path2)
-    
-    if selected_application is None:
-        host = environ.get('HTTP_HOST')
         
-        selected_application = _application_by_host_dict.get(host)
+        if selected_application is not None:
+            yield from selected_application(environ, start_response)
+            
+            return
     
-    if selected_application is None:
-        response_body = 'no application for this host'
-        
-        start_response('404 Not Found', [
-            ('Content-Type', 'text/plain;charset=utf-8'),
-        ])
-        yield response_body.encode()
+    host = environ.get('HTTP_HOST')
+    selected_application = _application_by_host_dict.get(host)
+    
+    if selected_application is not None:
+        yield from selected_application(environ, start_response)
         
         return
     
-    yield from selected_application(environ, start_response)
+    response_body = 'no application for this host'
+    
+    start_response('404 Not Found', [
+        ('Content-Type', 'text/plain;charset=utf-8'),
+    ])
+    
+    yield response_body.encode()
 
 #
 # Below for testing only
