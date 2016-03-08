@@ -19,7 +19,15 @@ _application_by_api_path = {
 }
 
 def application(environ, start_response):
-    host = environ.get('HTTP_HOST')
+    if environ['PATH_INFO'] == '/health':
+        response_body = '1'
+        
+        start_response('404 Not Found', [
+            ('Content-Type', 'text/plain;charset=utf-8'),
+        ])
+        yield response_body.encode()
+        
+        return
     
     selected_application = _application_by_host_dict.get(host)
     
