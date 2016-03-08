@@ -22,7 +22,7 @@ def application(environ, start_response):
     if environ['PATH_INFO'] == '/health':
         response_body = '1'
         
-        start_response('404 Not Found', [
+        start_response('200 OK', [
             ('Content-Type', 'text/plain;charset=utf-8'),
         ])
         yield response_body.encode()
