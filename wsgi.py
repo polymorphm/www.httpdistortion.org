@@ -18,14 +18,20 @@ _application_by_api_path = {
     'addrinfo': _addrinfo_wsgi.application,
 }
 
+def _health_check_app(environ, start_response):
+    response_body = '1'
+    
+    start_response('200 OK', [
+        ('Content-Type', 'text/plain;charset=utf-8'),
+    ])
+    
+    yield response_body.encode()
+
 def application(environ, start_response):
-    if True or environ['PATH_INFO'] == '/health':
-        response_body = '1'
-        
-        start_response('200 OK', [
-            ('Content-Type', 'text/plain;charset=utf-8'),
-        ])
-        yield response_body.encode()
+    path_info = environ.get('PATH_INFO')
+    
+    if path_info == '/health':
+        yield from _health_check_app()
         
         return
     
@@ -46,6 +52,11 @@ def application(environ, start_response):
     
     if selected_application is not None:
         yield from selected_application(environ, start_response)
+        
+        return
+    
+    if path_info = '/':
+        yield from _health_check_app()
         
         return
     
