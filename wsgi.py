@@ -19,7 +19,7 @@ _application_by_api_path = {
 }
 
 def application(environ, start_response):
-    if environ['PATH_INFO'] == '/health':
+    if True or environ['PATH_INFO'] == '/health':
         response_body = '1'
         
         start_response('200 OK', [
