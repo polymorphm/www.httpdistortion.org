@@ -66,6 +66,7 @@ def create_app(root=None, static_root=None):
     
     app.route('{}/<filename:path>'.format(static_root), callback=static_view)
     app.route(root, callback=addrinfo_view)
+    app.route('{}/'.format(root), method='POST', callback=addrinfo_view)
     app.route('{}/'.format(root), callback=addrinfo_view)
     
     return app
