@@ -16,10 +16,10 @@ def layout_render(**kwargs):
             'keywords': bottle.request.environ['app.DEFAULT_KEYWORDS'],
             'download_link_html':
                     '<a '
-                    'href="https://www.dropbox.com/s/g801qwx8jgkdtpc/http-distortion-build-11.7z" '
-                    'target="_blank">http-distortion-build-11.7z</a>',
+                    'href="https://www.dropbox.com/s/sw69ff8yhnoo43f/http-distortion-build-12.7z?dl=1" '
+                    'target="_blank">http-distortion-build-12.7z</a>',
             'download_last_update':
-                    'Thu 16 Apr 2015 00:56:17 MSK',
+                    'Sun 20 Mar 2016 23:46:48 MSK',
             }
     tpl_kwargs.update(kwargs)
     

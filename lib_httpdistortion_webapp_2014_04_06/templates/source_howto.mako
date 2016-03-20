@@ -11,14 +11,10 @@
 
 $ cd plasticine-socks-server
 
-$ git checkout plasticine-socks-server-0.9.4</pre>
+$ git checkout plasticine-socks-server-0.10.1</pre>
 
 <p>Для запуска утилиты потребуется версия <span class="highlight-color">Python</span>
-        не менее чем <span class="highlight-color">3.4</span> .
-        Или же можно обойтись версией <span class="highlight-color">3.3</span> , но только при условии
-        дополнительной установки модуля
-        <span class="highlight-color">"<a href="https://pypi.python.org/pypi/asyncio" target="_blank">asyncio</a>"</span>
-        (Python-3.4 уже по умолчанию содержит в себе встроенный модуль "asyncio").</p>
+        не менее чем <span class="highlight-color">3.5</span> .</p>
 
 <p>Если запустить утилиту с ключём <span class="highlight-color">"--help"</span> , то отобразится следующая справка:</p>
 
@@ -38,14 +34,14 @@ optional arguments:
                         path to pid file</pre>
 
 <p>Для выполнения наших целей -- содержимое конфигурационного файла должно указывать
-        на использование "addrinfo_appspot" и "http_distortion":</p>
+        на использование "addrinfo" и "http_distortion":</p>
 
 <pre class="code-block"># файл plasticine-socks-server.cfg
 
 [plasticine-socks-server]
 
 port = 1080
-features = addrinfo_appspot http_distortion</pre>
+features = addrinfo http_distortion</pre>
 
 Утилиту можно запускать, используя средства systemd:
 
